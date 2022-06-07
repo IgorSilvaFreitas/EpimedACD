@@ -18,14 +18,14 @@
 #'
 #' @export
 histogram <- function(data, var, x, filter, xlab="", ylab="", title=""){
-  data <- filter(data, data[[var]] == filter)
-  h1 <- ggplot(data, mapping = aes(x = data[[x]])) +
-    geom_histogram(fill="orange", col='White')+
-    geom_vline(xintercept = mean(data[[x]])) +
-    labs(y= ylab, x= xlab,
+  data <- dplyr::filter(data, data[[var]] == filter)
+  h1 <- ggplot2::ggplot(data, mapping = ggplot2::aes(x = data[[x]])) +
+    ggplot2::geom_histogram(fill="orange", col='White')+
+    ggplot2::geom_vline(xintercept = mean(data[[x]])) +
+    ggplot2::labs(y= ylab, x= xlab,
          title= title) +
-    theme_classic()+ theme(legend.position = "none", plot.title = element_text(hjust = 0.5,
-    size=14, face="bold"), text = element_text(size=15))
+    ggplot2::theme_classic()+ ggplot2::theme(plot.title = ggplot2::element_text(hjust = 0.5,
+    size=14, face="bold"), text = ggplot2::element_text(size=15))
 
   return(h1)
 }
