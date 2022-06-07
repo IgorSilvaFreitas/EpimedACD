@@ -1,6 +1,6 @@
-#' Custom histogram plot
+#' Custom summary data frame
 #'
-#' This function will create a custom histogram
+#' This function will create a summary data frame by categories
 #'
 #' @import dplyr
 #'
@@ -10,7 +10,7 @@
 #' @param row.names A vector with row names ordered
 #'
 #' @examples
-#' histogram(data, Gender, "Age", c("Male","Female"))
+#' summary_filtered(data, Gender, "Age", c("Male","Female"))
 #'
 #' @export
 summary_filtered <- function(data, var, x, row.names){
@@ -22,7 +22,7 @@ summary_filtered <- function(data, var, x, row.names){
                      Max = max({{x}}))
 
 
-  tabel_summary <- summary[,-1]
-  rownames(tabel_summary) <- row.names
-  return(tabel_summary)
+  table_summary <- summary[,-1]
+  rownames(table_summary) <- row.names
+  return(table_summary)
 }
