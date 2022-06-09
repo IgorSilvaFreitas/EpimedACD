@@ -22,7 +22,7 @@ accuracy <- function(data, y, prob, p1, p2=1, filter, label1, label2){
 
   data <- dplyr::filter(data, data[[y]] == filter)
 
-  ac <- mean(ifelse(data[[prob]] > p1 & data[[prob]] < p2, label1, label2) == data[[y]])
+  ac <- mean(ifelse(data[[prob]] > p1 & data[[prob]] <= p2, label1, label2) == data[[y]])
 
   return(ac)
 }
