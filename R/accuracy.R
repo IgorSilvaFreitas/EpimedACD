@@ -1,15 +1,14 @@
-#' Custom histogram plot
+#' logit model accuracy
 #'
-#' This function will create a custom histogram
+#' This function will calculate the accuracy of a logit model
 #'
 #' @import dplyr
-#' @import ggplot2
 #'
 #' @param data A data frame
 #' @param y The variable of interest
 #' @param prob The predicted probability column
-#' @param p1 The minimun probability to consider label1 true
-#' @param p2 The maximun probability to consider label1 true
+#' @param p1 The minimum probability to consider label1 true
+#' @param p2 The maximum probability to consider label1 true
 #' @param filter A label of interest to filter from y
 #' @param label1 First label to compare with y labels
 #' @param label2 Second label to compare with y labels
